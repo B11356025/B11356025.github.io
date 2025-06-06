@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>樂團介紹：MyGO!!!!!, Girls Band Cry, Ave Mujica</title>
     <style>
-        /* 基本重置與字體 */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -15,7 +14,6 @@
             line-height: 1.6;
         }
 
-        /* 導覽列 */
         .navbar {
             background-color: #333;
             color: white;
@@ -31,9 +29,9 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex; /* 使用 Flexbox 讓連結水平排列 */
+            display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* 換行以應對小螢幕 */
+            flex-wrap: wrap;
         }
 
         .nav-links li {
@@ -53,9 +51,8 @@
             background-color: #555;
         }
 
-        /* 漢堡選單 (只在小螢幕顯示) */
         .hamburger {
-            display: none; /* 預設不顯示 */
+            display: none;
             font-size: 2rem;
             cursor: pointer;
             position: absolute;
@@ -65,7 +62,6 @@
             color: white;
         }
 
-        /* 主要內容區塊 */
         .container {
             max-width: 1200px;
             margin: 20px auto;
@@ -73,7 +69,6 @@
         }
 
         .band-section {
-            background-color: white;
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 8px;
@@ -81,7 +76,6 @@
         }
 
         .band-section h2 {
-            color: #007bff;
             text-align: center;
             margin-bottom: 25px;
             font-size: 2.2rem;
@@ -97,25 +91,23 @@
 
         .band-details {
             display: flex;
-            flex-wrap: wrap; /* 允許成員列表換行 */
-            gap: 20px; /* 成員之間間距 */
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
             margin-top: 20px;
         }
 
         .member-card {
-            background-color: #e9e9e9;
             padding: 15px;
             border-radius: 6px;
             text-align: center;
-            flex: 1 1 calc(33% - 40px); /* 桌面版每行3個，扣除gap */
-            min-width: 180px; /* 最小寬度，防止過窄 */
+            flex: 1 1 calc(33% - 40px);
+            min-width: 180px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .member-card h3 {
             margin-top: 0;
-            color: #444;
         }
 
         .member-card p {
@@ -131,7 +123,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* 動態列表區塊 (最新消息/活動) */
         #news-events {
             background-color: white;
             padding: 30px;
@@ -141,7 +132,7 @@
         }
 
         #news-events h2 {
-            color: #dc3545; /* 醒目顏色 */
+            color: #dc3545;
             text-align: center;
             margin-bottom: 25px;
             font-size: 2.2rem;
@@ -158,7 +149,7 @@
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 6px;
-            display: flex; /* 使用 flexbox 讓日期和內容並排 */
+            display: flex;
             align-items: flex-start;
             gap: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -167,9 +158,13 @@
         .news-item .date {
             font-weight: bold;
             color: #666;
-            flex-shrink: 0; /* 防止日期被壓縮 */
-            width: 80px; /* 固定日期欄寬度 */
+            flex-shrink: 0;
+            width: 80px;
             text-align: right;
+        }
+
+        .news-item .content {
+            flex-grow: 1;
         }
 
         .news-item .content h3 {
@@ -191,9 +186,23 @@
             border-radius: 4px;
             font-size: 0.8rem;
             margin-top: 5px;
+            margin-right: 10px;
         }
 
-        /* 底部 */
+        .news-item .content .news-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .news-item .content .news-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
         .footer {
             background-color: #333;
             color: white;
@@ -203,32 +212,89 @@
             font-size: 0.9rem;
         }
 
-        /* --- 響應式設計 (RWD) --- */
+        /* --- 樂團專屬配色 --- */
 
-        /* 當螢幕寬度小於 768px 時 */
+        /* MyGO!!!!! 風格 (以藍色、白色為主，青春明亮感) */
+        #mygo {
+            background-color: #e0f2f7; /* 淺藍色背景 */
+            color: #333; /* 主要文字顏色 */
+        }
+        #mygo h2 {
+            color: #007bff; /* 標題藍色 */
+        }
+        #mygo .member-card {
+            background-color: #c9e6f0; /* 成員卡片淺藍色 */
+            color: #222; /* 成員卡片文字顏色 */
+        }
+        #mygo .member-card h3 {
+            color: #0056b3; /* 成員卡片標題藍色 */
+        }
+
+        /* Girls Band Cry 風格 (以鮮豔、橘色、黃色為主，活力奔放感) */
+        #girls-band-cry {
+            background-color: #fff3e0; /* 淺橘黃色背景 */
+            color: #333; /* 主要文字顏色 */
+        }
+        #girls-band-cry h2 {
+            color: #ff9800; /* 標題橘色 */
+        }
+        #girls-band-cry .member-card {
+            background-color: #ffe0b2; /* 成員卡片淺橘色 */
+            color: #222; /* 成員卡片文字顏色 */
+        }
+        #girls-band-cry .member-card h3 {
+            color: #e65100; /* 成員卡片標題深橘色 */
+        }
+
+        /* Ave Mujica 風格 (以深色、紫色、神秘感) */
+        #ave-mujica {
+            background-color: #262626; /* 深灰色背景 */
+            color: #e0e0e0; /* 主要文字淺灰色 */
+        }
+        #ave-mujica h2 {
+            color: #9c27b0; /* 標題紫色 */
+        }
+        #ave-mujica p {
+            color: #e0e0e0; /* 段落文字淺灰色 */
+        }
+        #ave-mujica b {
+            color: #e0e0e0; /* 粗體文字淺灰色 */
+        }
+        #ave-mujica .member-card {
+            background-color: #383838; /* 成員卡片深一點的灰色 */
+            color: #f0f0f0; /* 成員卡片文字白色 */
+        }
+        #ave-mujica .member-card h3 {
+            color: #ce93d8; /* 成員卡片標題淺紫色 */
+        }
+        #ave-mujica .member-card p {
+            color: #f0f0f0; /* 成員卡片段落文字白色 */
+        }
+
+
         @media (max-width: 768px) {
             .navbar {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 padding: 1rem 20px;
-                position: relative; /* 為了讓 hamburger 可以定位 */
+                position: relative;
             }
 
             .nav-links {
-                display: none; /* 預設隱藏導覽列連結 */
-                flex-direction: column; /* 垂直排列 */
+                display: none;
+                flex-direction: column;
                 width: 100%;
                 background-color: #333;
                 position: absolute;
-                top: 100%; /* 顯示在導覽列下方 */
+                top: 100%;
                 left: 0;
                 padding: 10px 0;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             }
 
             .nav-links.active {
-                display: flex; /* 點擊後顯示 */
+                display: flex;
             }
 
             .nav-links li {
@@ -237,7 +303,7 @@
             }
 
             .hamburger {
-                display: block; /* 顯示漢堡選單 */
+                display: block;
             }
 
             .band-section h2, #news-events h2 {
@@ -245,25 +311,24 @@
             }
 
             .member-card {
-                flex: 1 1 calc(50% - 20px); /* 小螢幕每行2個 */
+                flex: 1 1 calc(50% - 20px);
             }
 
             .news-item {
-                flex-direction: column; /* 小螢幕下日期和內容垂直堆疊 */
+                flex-direction: column;
                 align-items: flex-start;
             }
 
             .news-item .date {
                 text-align: left;
                 width: auto;
-                margin-bottom: 5px; /* 日期下方留白 */
+                margin-bottom: 5px;
             }
         }
 
-        /* 當螢幕寬度小於 480px 時 */
         @media (max-width: 480px) {
             .member-card {
-                flex: 1 1 100%; /* 極小螢幕每行1個 */
+                flex: 1 1 100%;
             }
 
             .band-section h2, #news-events h2 {
@@ -275,7 +340,8 @@
 <body>
 
     <nav class="navbar">
-        <div class="hamburger">&#9776;</div> <ul class="nav-links">
+        <div class="hamburger">☰</div>
+        <ul class="nav-links">
             <li><a href="#mygo">MyGO!!!!!</a></li>
             <li><a href="#girls-band-cry">Girls Band Cry</a></li>
             <li><a href="#ave-mujica">Ave Mujica</a></li>
@@ -286,7 +352,7 @@
     <div class="container">
         <section id="mygo" class="band-section">
             <h2>MyGO!!!!!</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/zh/b/b3/MyGO_logo.png" alt="MyGO!!!!! Logo">
+            <img src="Mygo.png" alt="MyGO!!!!! Logo">
             <p>MyGO!!!!! 是多媒體企劃《BanG Dream!》旗下的一個女子樂團，以其獨特的現實感和成長故事而聞名。樂團成員都是虛擬角色，但背後有真實的聲優負責演奏和演唱。她們的故事圍繞著尋找自我、人際關係的困境和樂團的成長而展開，透過動畫《BanG Dream! It's MyGO!!!!!》深受觀眾喜愛。</p>
             <p><b>代表歌曲：</b> 迷星叫、音一会、焚音打</p>
             <div class="band-details">
@@ -316,12 +382,13 @@
                     <p><b>聲優：</b>林鼓子</p>
                 </div>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/a72Y9y2h4g4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        <hr> <section id="girls-band-cry" class="band-section">
+        <hr>
+
+        <section id="girls-band-cry" class="band-section">
             <h2>Girls Band Cry</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/zh/f/f3/Girls_Band_Cry_logo.png" alt="Girls Band Cry Logo">
+            <img src="GBC.jpg" alt="Girls Band Cry Logo">
             <p>Girls Band Cry 是一個由東映動畫原創的女子樂團企劃，以其真實的音樂性和視覺風格而受到關注。這個企劃同樣強調樂團成員的成長和彼此間的羈絆，透過動畫作品《Girls Band Cry》呈現她們的音樂旅程和挑戰。</p>
             <p><b>代表歌曲：</b> 聲吶 (ソナー)、空の箱 (Kono Hako)</p>
             <div class="band-details">
@@ -351,12 +418,13 @@
                     <p><b>聲優：</b>朱李</p>
                 </div>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ld78-bE03rU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        <hr> <section id="ave-mujica" class="band-section">
+        <hr>
+
+        <section id="ave-mujica" class="band-section">
             <h2>Ave Mujica (磐石千金)</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/zh/d/d4/Ave_Mujica_logo.png" alt="Ave Mujica Logo">
+            <img src="omg.jpg" alt="Ave Mujica Logo">
             <p>Ave Mujica 是《BanG Dream!》系列中另一個獨特的女子樂團，其風格相較於 MyGO!!!!! 更為黑暗、神秘和哥德。她們的音樂充滿張力，視覺設計也極具戲劇性。在動畫《BanG Dream! It's MyGO!!!!!》的劇情中，她們作為一個謎團般的樂團登場，是 MyGO!!!!! 故事線的重要補充。</p>
             <p><b>代表歌曲：</b> 神經與共 (神經とシンクロ)、黑のバースデイ (Kuro no Birthday)</p>
             <div class="band-details">
@@ -386,13 +454,14 @@
                     <p><b>聲優：</b>岡田夢以</p>
                 </div>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5a1u1wG8Y7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        <hr> <section id="news-events">
+        <hr>
+
+        <section id="news-events">
             <h2>最新消息/活動</h2>
             <ul id="news-list">
-                </ul>
+            </ul>
         </section>
     </div>
 
@@ -401,7 +470,6 @@
     </footer>
 
     <script>
-        // 漢堡選單功能
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
@@ -409,42 +477,41 @@
             navLinks.classList.toggle('active');
         });
 
-        // 動態生成最新消息/活動列表
         const newsData = [
             {
                 date: "2025/06/01",
                 band: "MyGO!!!!!",
                 title: "MyGO!!!!! 夏季全國巡迴演唱會公佈！",
                 description: "MyGO!!!!! 將於今年七月至八月舉辦全國巡迴演唱會「迷星之夏」，詳情請關注官方網站。",
-                link: "#" // 可以放連結到詳細頁面
+                link: "https://bang-dream.com/mygo"
             },
             {
                 date: "2025/05/25",
                 band: "Girls Band Cry",
                 title: "Girls Band Cry 第二張單曲「雨音的回響」發售",
                 description: "備受期待的第二張單曲正式發售，收錄兩首全新歌曲及伴奏。",
-                link: "#"
+                link: "https://girls-band-cry.com/"
             },
             {
                 date: "2025/05/20",
                 band: "Ave Mujica",
                 title: "Ave Mujica 首次線上演唱會「深淵之宴」",
                 description: "Ave Mujica 宣佈將於六月底舉行首次線上演唱會，帶來視覺與聽覺的震撼。",
-                link: "#"
+                link: "https://anime.bang-dream.com/avemujica/"
             },
             {
                 date: "2025/05/10",
                 band: "MyGO!!!!!",
                 title: "動畫《BanG Dream! It's MyGO!!!!!》第二季製作決定！",
                 description: "官方宣佈動畫將推出第二季，粉絲們期待已久的故事將會繼續。",
-                link: "#"
+                link: "https://bang-dream.com/mygo"
             },
             {
                 date: "2025/04/30",
                 band: "Girls Band Cry",
                 title: "Girls Band Cry 首次粉絲見面會圓滿落幕",
                 description: "樂團成員與粉絲們進行了近距離互動，現場氣氛熱烈。",
-                link: "#"
+                link: "https://girls-band-cry.com/"
             }
         ];
 
@@ -471,9 +538,19 @@
             bandTag.classList.add('band-tag');
             bandTag.textContent = item.band;
 
+            const newsLink = document.createElement('a');
+            newsLink.classList.add('news-link');
+            newsLink.href = item.link;
+            newsLink.textContent = "查看更多 »";
+            newsLink.target = "_blank";
+
             contentDiv.appendChild(title);
             contentDiv.appendChild(description);
             contentDiv.appendChild(bandTag);
+            
+            if (item.link && item.link !== '#') {
+                contentDiv.appendChild(newsLink);
+            }
 
             li.appendChild(dateDiv);
             li.appendChild(contentDiv);
