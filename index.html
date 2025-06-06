@@ -23,6 +23,11 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; 
         }
 
         .nav-links {
@@ -52,10 +57,10 @@
         }
 
         .hamburger {
-            display: none;
+            display: none; 
             font-size: 2rem;
             cursor: pointer;
-            position: absolute;
+            position: absolute; 
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
@@ -66,6 +71,42 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
+        }
+
+        
+        #welcome-section {
+            background-image: url('bo.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: white; 
+            padding: 100px 20px; 
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            margin-top: 20px;
+            margin-bottom: 30px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        #welcome-section h1 {
+            color: white; 
+            font-size: 3.5rem; 
+            margin-bottom: 15px;
+        }
+        #welcome-section p {
+            color: #f0f0f0; 
+            font-size: 1.3rem; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #welcome-section img {
+            display: none;
         }
 
         .band-section {
@@ -212,73 +253,69 @@
             font-size: 0.9rem;
         }
 
-        /* --- 樂團專屬配色 --- */
+      
 
-        /* MyGO!!!!! 風格 (以藍色、白色為主，青春明亮感) */
+        
         #mygo {
-            background-color: #e0f2f7; /* 淺藍色背景 */
-            color: #333; /* 主要文字顏色 */
+            background-color: #e0f2f7; 
+            color: #333; 
         }
         #mygo h2 {
-            color: #007bff; /* 標題藍色 */
+            color: #007bff; 
         }
         #mygo .member-card {
-            background-color: #c9e6f0; /* 成員卡片淺藍色 */
-            color: #222; /* 成員卡片文字顏色 */
+            background-color: #c9e6f0; 
+            color: #222; 
         }
         #mygo .member-card h3 {
-            color: #0056b3; /* 成員卡片標題藍色 */
+            color: #0056b3; 
         }
 
-        /* Girls Band Cry 風格 (以鮮豔、橘色、黃色為主，活力奔放感) */
+        
         #girls-band-cry {
-            background-color: #fff3e0; /* 淺橘黃色背景 */
-            color: #333; /* 主要文字顏色 */
+            background-color: #fff3e0; 
+            color: #333; 
         }
         #girls-band-cry h2 {
-            color: #ff9800; /* 標題橘色 */
+            color: #ff9800;
         }
         #girls-band-cry .member-card {
-            background-color: #ffe0b2; /* 成員卡片淺橘色 */
-            color: #222; /* 成員卡片文字顏色 */
+            background-color: #ffe0b2; 
+            color: #222; 
         }
         #girls-band-cry .member-card h3 {
-            color: #e65100; /* 成員卡片標題深橘色 */
+            color: #e65100; 
         }
 
-        /* Ave Mujica 風格 (以深色、紫色、神秘感) */
+        
         #ave-mujica {
-            background-color: #262626; /* 深灰色背景 */
-            color: #e0e0e0; /* 主要文字淺灰色 */
+            background-color: #262626; 
+            color: #e0e0e0;
         }
         #ave-mujica h2 {
-            color: #9c27b0; /* 標題紫色 */
+            color: #9c27b0; 
         }
         #ave-mujica p {
-            color: #e0e0e0; /* 段落文字淺灰色 */
+            color: #e0e0e0; 
         }
         #ave-mujica b {
-            color: #e0e0e0; /* 粗體文字淺灰色 */
+            color: #e0e0e0; 
         }
         #ave-mujica .member-card {
-            background-color: #383838; /* 成員卡片深一點的灰色 */
-            color: #f0f0f0; /* 成員卡片文字白色 */
+            background-color: #383838; /
+            color: #f0f0f0;
         }
         #ave-mujica .member-card h3 {
-            color: #ce93d8; /* 成員卡片標題淺紫色 */
+            color: #ce93d8; /
         }
         #ave-mujica .member-card p {
-            color: #f0f0f0; /* 成員卡片段落文字白色 */
+            color: #f0f0f0; 
         }
 
 
         @media (max-width: 768px) {
             .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 20px;
-                position: relative;
+                justify-content: space-between; 
             }
 
             .nav-links {
@@ -294,7 +331,7 @@
             }
 
             .nav-links.active {
-                display: flex;
+                display: flex; 
             }
 
             .nav-links li {
@@ -303,7 +340,14 @@
             }
 
             .hamburger {
-                display: block;
+                display: block; 
+            }
+
+            #welcome-section h1 {
+                font-size: 2.5rem; 
+            }
+            #welcome-section p {
+                font-size: 1rem; /
             }
 
             .band-section h2, #news-events h2 {
@@ -342,7 +386,7 @@
     <nav class="navbar">
         <div class="hamburger">☰</div>
         <ul class="nav-links">
-            <li><a href="#mygo">MyGO!!!!!</a></li>
+            <li><a href="#welcome-section">回首頁</a></li> <li><a href="#mygo">MyGO!!!!!</a></li>
             <li><a href="#girls-band-cry">Girls Band Cry</a></li>
             <li><a href="#ave-mujica">Ave Mujica</a></li>
             <li><a href="#news-events">最新消息</a></li>
@@ -350,6 +394,11 @@
     </nav>
 
     <div class="container">
+        <section id="welcome-section">
+            <h1>歡迎來到樂團介紹專頁！</h1>
+            <p>探索 MyGO!!!!!、Girls Band Cry 與 Ave Mujica 的音樂世界，了解她們的故事與成員。</p>
+        </section>
+
         <section id="mygo" class="band-section">
             <h2>MyGO!!!!!</h2>
             <img src="Mygo.png" alt="MyGO!!!!! Logo">
@@ -466,7 +515,7 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 樂團介紹站. All rights reserved.</p>
+        <p>&copy; 2025 樂團介紹站. 簡單介紹  All rights reserved.</p>
     </footer>
 
     <script>
